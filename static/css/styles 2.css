@@ -178,6 +178,14 @@ body, html {
  
  /* Responsive Design */
  @media (max-width: 768px) {
+       .form-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+  }
    .frontpage {
        font-size: 30px; 
        text-align: center; 
