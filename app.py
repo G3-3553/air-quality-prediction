@@ -52,13 +52,22 @@ def predict():
             prediction = int(prediction[0])
             # Return result as a JSON response
             
-            result_message = "Air Quality is Good" if (prediction == 1 )else "Air Quality is Poor"
+            if prediction == 0:
+                result_message = "Prediction : Uh oh 😞, the Air Quality is POOR in your area. Please stay safe 🙏"
+                
+            else:
+                result_message = "Prediction : The Air Quality in your area looks GOOD 😊."
+                
+
             print({'Prediction': result_message})
             return jsonify({'Prediction': result_message})
     
             #return render_template('frontend.html', result_message=result_message)
 
     #return render_template('frontend.html')
+
+if __name__ == "__main__":
+    app.run(debug=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
